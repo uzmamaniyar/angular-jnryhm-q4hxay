@@ -1,13 +1,13 @@
 kendo-chart {
   max-width: 525px;
-  max-height: 300px;
+  max-height: 350px;
 }
 ::ng-deep g > text {
   font-size: 11px !important;
 }
 .chartContainer {
   overflow-y: scroll;
-  height: 150px;
+  height: 300px;
   max-width: 550px;
 }
 .k-card-title {
@@ -45,15 +45,8 @@ p {
   margin-right: 10px;
 }
 
-kendo-chart {
-  max-width: 525px;
-  max-height: 250px;
-}
 ::ng-deep g > text {
   font-size: 11px !important;
-}
-
-.k-chart {
 }
 
 ::-webkit-scrollbar {

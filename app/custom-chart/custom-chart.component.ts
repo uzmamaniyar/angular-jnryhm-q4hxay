@@ -19,8 +19,7 @@ const { Point, Rect, Size } = geometry;
   styleUrls: ['./custom-chart.component.css'],
 })
 export class CustomChartComponent implements AfterViewInit {
-  public chartTitle =
-    'Gross domestic product growth /GDP annual Gross domestic product growth /GDP annual Gross domestic product growth /GDP annual Grossdomestic product growth /GDP annual product growth /GDP annual Gross ';
+  public chartTitle = 'Gross domestic product growth ';
   public legend: Element;
   public categories: any[] = [
     'T122222222222222222222222222222222222222222222222222222a',

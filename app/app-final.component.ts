@@ -15,28 +15,28 @@ const { Point, Rect, Size } = geometry;
   selector: 'my-app',
   template: `
     <br>
-<kendo-card width="400px">
+<kendo-card width="405px">
 <kendo-card-body>
       
         <div class="k-hstack">
             <h4>CAPEX</h4>
         </div>
-        <div  class='chartContainer' >
+        <div  class='chartContainer'  style="height:280px">
             <h6 class="ChartTitle"> Gross domestic product growth </h6>
         
       
       <kendo-chart [transitions]="false"
-       style="height:180px"
        [ngStyle]="{ 'height.px': chartHeight }"
-        [pannable]="true"
-        [zoomable]="true"
+       [pannable]="{ lock: 'y' }"
+       [zoomable]="{ mousewheel: { lock: 'y' }, selection: { lock: 'y' } }"
+     
         class="test"
         >
        
     <kendo-chart-panes>
         <kendo-chart-pane name="pane" clip="false">
         </kendo-chart-pane>
-    </kendo-chart-panes>
+    </kendo-chart-panes>\
     
     <!--    <kendo-chart-title 
       text="Gross domestic product growth /GDP annual %/">
@@ -201,6 +201,7 @@ const { Point, Rect, Size } = geometry;
               text-align: center;
               
             }
+            
         `,
   ],
 })
