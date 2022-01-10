@@ -26,7 +26,6 @@ const { Point, Rect, Size } = geometry;
         
       
       <kendo-chart [transitions]="false"
-       [ngStyle]="{ 'height.px': chartHeight }"
        [pannable]="{ lock: 'y' }"
        [zoomable]="{ mousewheel: { lock: 'y' }, selection: { lock: 'y' } }"
      
@@ -107,18 +106,14 @@ const { Point, Rect, Size } = geometry;
   styles: [
     `
     
-    kendo-chart{ max-width: 525px; max-height: 300px;}
+    kendo-chart{ max-width: 525px; max-height: 350px;}
       ::ng-deep g>text{ font-size: 11px !important;}
       
-      .chartContainer{overflow-y:scroll; height:150px; max-width: 550px;}
+      .chartContainer{overflow-y:scroll; height:200px; max-width: 550px;}
             .k-card-title {
                 margin-bottom: 0;
             }
-            img {
-                width: 100%;
-                height: 200px;
-                background-size: cover;
-            }
+          
             .k-card-separator {
                 height: auto;
             }
@@ -180,21 +175,7 @@ const { Point, Rect, Size } = geometry;
             .chart-legend {
               text-align: center;
             }
-            .legend-item {
-              font: 12px sans-serif;
-              margin: 12px;
-              cursor: pointer;
-            }
-      
-            .legend-item .legend-marker {
-              display: inline-block;
-              width: 16px;
-              height: 2px;
-              text-align:center;
-              margin-bottom: 3px;
-              margin-right: 3px;
-              
-            }
+            
            
             .ChartTitle
             {
@@ -440,6 +421,10 @@ export class AppComponent {
       }
       //if(this.series[0].data.count)
       this.chartWidth = this.series[0].data.length * 6.5;
+
+      if (this.chartHeight < 50) {
+        return;
+      }
       this.renderer.setStyle(
         this.elRef.nativeElement.querySelector('.k-chart-surface'),
         'height',
